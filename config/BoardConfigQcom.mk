@@ -54,6 +54,10 @@ QSSI_SUPPORTED_PLATFORMS := \
     $(UM_5_4_FAMILY) \
     $(UM_5_10_FAMILY)
 
+ifeq ($(TARGET_USES_UM_4_19),true)
+    QSSI_SUPPORTED_PLATFORMS += $(TARGET_BOARD_PLATFORM)
+endif
+
 BOARD_USES_ADRENO := true
 
 # Add qtidisplay to soong config namespaces
